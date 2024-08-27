@@ -5,8 +5,8 @@ export const getAllMeals = () => {
   return client.get<Meals>('/search.php?s=');
 }
 
-export const getMealsByFilter = (url: string) => {
-  return client.get(`/filter.php?${url}`);
+export const getMealsByFilter = (category: string) => {
+  return client.get(`/filter.php?c=${category}`);
 }
 
 export const getDetailedMeal = (mealId: number) => {

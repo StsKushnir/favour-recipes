@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import * as categoriesActions from "@/features/categoriesSlice";
-import Header from "@/components/Header/Header";
 import { Recipes }from "@/components/Recipes/Recipes";
+import { Categories } from "@/components/Categories/Categories";
 
 export default function Home() {
   const [currCategory, setCurrCategory] = useState('');
@@ -17,33 +17,14 @@ export default function Home() {
   }, []);
   console.log('categories:', categories)
   return (
-    <>
-      <Header />
       <main className="flex flex-col items-center justify-between w-[95%] p-4  mt-6">
-        <h1 className="font-bold text-2xl mt-6 ">
-          YOUR BEST RECIPES FROM WHOLE WORLD
-        </h1>
-        <ul className="flex flex-wrap justify-center gap-4 mt-10">
-          {categories.map((category) => (
-            <li className="hover:scale-110 transition-all duration-300 ease-in-out border-[4px] border-[#E2E6E9] hover:border-[#f7a15a]"
-            key={category.idCategory}
-            onClick={() => setCurrCategory(category.strCategory)}>
-              <a href="#" className="flex flex-col items-center text-center ">
-
-                <Image
-                  src={category.strCategoryThumb}
-                  alt="dish-name"
-                  width={180}
-                  height={180}
-                  className="border-none"
-                />
-                <p className="mt-4">{category.strCategory}</p>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <Recipes currCategory={currCategory} />
+        {/* <Categories /> */}
+        <div>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
       </main>
-    </>
+
   );
 }

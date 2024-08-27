@@ -1,5 +1,6 @@
 import { TextField } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   
@@ -14,10 +15,10 @@ export default function Header() {
         />
       </a>
 
-      <button className="bg-[#ca3123] p-3 text-[#E2E6E9] flex rounded-full gap-x-1">
+      <Link href='/favourites' className="bg-[#ca3123] p-3 text-[#E2E6E9] flex rounded-full gap-x-1">
         <p>Favorites: </p>
         <span>0</span>
-      </button>
+      </Link>
     </header>
   );
 }
