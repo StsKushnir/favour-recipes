@@ -1,13 +1,11 @@
 "use client"
-import { useFavouritsContext } from "@/controllers/Favourits/useFavouritsContext";
 import Image from "next/image";
 
 const Favourites = () => {
-  const { favourites } = useFavouritsContext();
 
   return (
     <>
-      { favourites && favourites.length > 0 ? (
+      {/* { favourites && favourites.length > 0 ? (
 
         <Image
           src='/icons/images-train.jpg'
@@ -15,7 +13,7 @@ const Favourites = () => {
           width={200}
           height={200}
         />
-      ) : (<div></div>)}
+      ) : (<div></div>)} */}
     </>
   )
 }
