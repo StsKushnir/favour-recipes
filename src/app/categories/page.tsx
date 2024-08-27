@@ -4,8 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import * as categoriesActions from "@/features/categoriesSlice";
 import { Recipes }from "@/components/Recipes/Recipes";
+import Link from "next/link";
 
-export const Categories: React.FC = () => {
+const Categories: React.FC = () => {
   const [currCategory, setCurrCategory] = useState('');
   const categories = useAppSelector((state) => state.categories.categories);
   const categoriesStatus = useAppSelector((state) => state.categories.status);
@@ -16,7 +17,7 @@ export const Categories: React.FC = () => {
   }, []);
   return (
     <>
-      <div className="flex flex-col items-center justify-between w-[95%] p-4  mt-6">
+      <div className="relative flex flex-col items-center justify-between w-[95%] p-4  mt-6">
         {currCategory 
         ? 
         <Recipes currCategory={currCategory} /> 
@@ -46,7 +47,12 @@ export const Categories: React.FC = () => {
         </ul>
         </>
         }
+        <Link href="/" className="absolute right-0 bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+          Back to home
+        </Link>
       </div>
     </>
   );
 }
+
+export default Categories;

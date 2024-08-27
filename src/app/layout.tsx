@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"flex min-h-screen flex-col bg-[#e9dbb4]"}>
+      <body className={"flex min-h-screen flex-col bg-[#e9dbb4] "}>
         <ReduxProvider> 
           <Header /> 
             {children} 

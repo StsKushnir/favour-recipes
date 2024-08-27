@@ -4,13 +4,12 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { Meal } from "@/types/Meal";
 import { findByCategory } from "@/utils/filterCategory";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect } from "react";
 
 type Props = {
   currCategory: string;
 };
-export const Recipes: React.FC<Props> = ({ currCategory }) => {
+const Recipes: React.FC<Props> = ({ currCategory }) => {
   const meals = useAppSelector((state) => state.meals.meals);
   const dispatch = useAppDispatch();
 
@@ -74,11 +73,12 @@ export const Recipes: React.FC<Props> = ({ currCategory }) => {
               height={250}
               className=""
             />
-        <Link href="/" className="bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+        <a href="" className="bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
           Back to menu
-        </Link>
+        </a>
       </>
     }
     </>
   );
 };
+export default Recipes

@@ -8,7 +8,7 @@ import * as mealsActions from "@/features/mealsSlice";
 
 import TextField from "@mui/material/TextField";
 import { filterMeals } from "@/utils/filterCategory";
-import { Categories } from "@/components/Categories/Categories";
+import Link from "next/link";
 
 export default function Home() {
   const [currCategory, setCurrCategory] = useState("");
@@ -27,13 +27,12 @@ export default function Home() {
     dispatch(categoriesActions.getCategoriesAsync());
   }, []);
 
-  const filteredMeals = filterMeals(meals, currQuery);
+  const filteredMeals = filterMeals(meals, currCategory);
 
   console.log('filteredMeals:', filteredMeals)
   return ( 
     <main className="flex flex-col items-center justify-between w-[95%] p-4  mt-6">
-    {openCategories ? <Categories /> :
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center ">
         <div className="">
           <TextField
             id="filled-basic"
@@ -70,10 +69,10 @@ export default function Home() {
           />
         </div>
         <div>
-          <button className="bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
+          <Link href='/categories' className="absolute right-0 bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
           onClick={() => setOpenCategories(true)}>
-            Look Category
-          </button>
+            Look Categories
+          </Link>
         </div>
         <div>
           <ul className="flex flex-wrap gap-x-4 mt-6 items-center justify-center gap-y-4">
@@ -113,7 +112,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      }
     </main>
   );
 }
