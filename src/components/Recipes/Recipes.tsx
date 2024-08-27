@@ -17,15 +17,15 @@ export const Recipes: React.FC<Props> = ({ currCategory }) => {
     dispatch(mealsActions.getMealsAsync());
   }, []);
 
-  const filteredMeals = findByCategory(meals, currCategory);
+  const filteredCategories = findByCategory(meals, currCategory);
 
   return (
     <>
-    {filteredMeals.length > 0 ?
+    {filteredCategories.length > 0 ?
       <div className="flex flex-col items-center justify-center">
       <h2>Best in category - {currCategory}</h2>
       <ul className="flex flex-wrap gap-x-4 mt-6 items-center justify-center gap-y-4">
-        {filteredMeals.map((meal) => (
+        {filteredCategories.map((meal) => (
           <li
             key={meal.idMeal}
             className="p-6 border border-[#E2E6E9] bg-orange-100"
