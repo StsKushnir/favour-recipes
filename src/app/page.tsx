@@ -9,6 +9,8 @@ import * as mealsActions from "@/features/mealsSlice";
 import TextField from "@mui/material/TextField";
 import { filterMeals } from "@/utils/filterCategory";
 import Link from "next/link";
+import { Pagination } from "@mui/material";
+
 
 export default function Home() {
   const [currCategory, setCurrCategory] = useState("");
@@ -27,12 +29,12 @@ export default function Home() {
     dispatch(categoriesActions.getCategoriesAsync());
   }, []);
 
-  const filteredMeals = filterMeals(meals, currCategory);
+  const filteredMeals = filterMeals(meals, currQuery);
 
   console.log('filteredMeals:', filteredMeals)
   return ( 
-    <main className="flex flex-col items-center justify-between w-[95%] p-4  mt-6">
-      <div className="flex flex-col items-center ">
+    <main className=" flex flex-col items-center justify-between w-[95%] p-4  mt-6 ">
+      <div className="flex flex-col items-center">
         <div className="">
           <TextField
             id="filled-basic"
@@ -69,7 +71,7 @@ export default function Home() {
           />
         </div>
         <div>
-          <Link href='/categories' className="absolute right-0 bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
+          <Link href='/categories' className="fixed right-[5%] top-[25%] bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
           onClick={() => setOpenCategories(true)}>
             Look Categories
           </Link>
@@ -112,6 +114,8 @@ export default function Home() {
           </ul>
         </div>
       </div>
+
+      <Pagination count={10} variant="outlined" shape="rounded" className="mt-8"/>
     </main>
   );
 }

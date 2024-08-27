@@ -17,7 +17,7 @@ const Categories: React.FC = () => {
   }, []);
   return (
     <>
-      <div className="relative flex flex-col items-center justify-between w-[95%] p-4  mt-6">
+      <div className=" flex flex-col items-center justify-between w-[95%] p-4  mt-6">
         {currCategory 
         ? 
         <Recipes currCategory={currCategory} /> 
@@ -47,7 +47,7 @@ const Categories: React.FC = () => {
         </ul>
         </>
         }
-        <Link href="/" className="absolute right-0 bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+        <Link href="/" className="fixed right-[5%] top-[25%] bg-[#ca3123] p-2 text-[#E2E6E9] rounded-full hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
           Back to home
         </Link>
       </div>
