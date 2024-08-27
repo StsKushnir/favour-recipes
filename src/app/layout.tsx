@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Favour recipes",
   description: "Best dishes for you family",
   icons: {
-    icon: "/icon/favicon-icon.png",
+    icon: "/icons/favicon-icon.png",
   },
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={"flex min-h-screen flex-col bg-[#e9dbb4]"}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

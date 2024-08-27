@@ -1,20 +1,18 @@
-import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
-// import charactersReducer from "../features/charactersSlice"
-// import filterReducer from "../features/filtersSlice"
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit"; 
+import mealsReducer from '../features/mealsSlice'; 
 
-export const store = configureStore({
-  reducer: {
-    // characters: charactersReducer,
-    // filter: filterReducer,
-  },
-});
+export const store = configureStore({ 
+  reducer: { 
+    meals: mealsReducer, 
+  }, 
+}); 
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch; 
+export type RootState = ReturnType<typeof store.getState>; 
 
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
+export type AppThunk<ReturnType = void> = ThunkAction< 
+  ReturnType, 
+  RootState, 
+  unknown, 
+  Action<string> 
 >;
