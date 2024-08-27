@@ -31,7 +31,7 @@ const Categories: React.FC = () => {
             <li className="hover:scale-110 transition-all duration-300 ease-in-out border-[4px] border-[#E2E6E9] hover:border-[#f7a15a]"
             key={category.idCategory}
             onClick={() => setCurrCategory(category.strCategory)}>
-              <a href="#" className="flex flex-col items-center text-center ">
+              <Link href={`/categories/${category.strCategory}`} className="flex flex-col items-center text-center ">
 
                 <Image
                   src={category.strCategoryThumb}
@@ -41,7 +41,7 @@ const Categories: React.FC = () => {
                   className="border-none"
                 />
                 <p className="mt-4">{category.strCategory}</p>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
