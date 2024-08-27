@@ -18,7 +18,7 @@ export default function Home() {
   console.log('categories:', categories)
   return (
       <main className="flex flex-col items-center justify-between w-[95%] p-4  mt-6">
-        {/* <Categories /> */}
+        <Categories />
         <div>
           <ul>
             <li></li>
