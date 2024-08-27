@@ -83,6 +83,7 @@ export default function Home() {
                 key={meal.idMeal}
                 className=" flex flex-col items-center justify-between p-6 border border-[#E2E6E9] bg-orange-100 w-[300px] h-[500px]"
               >
+                <Link href={`${meal.strMeal}`}>
                 <Image
                   src={meal.strMealThumb}
                   alt="dish-name"
@@ -109,6 +110,7 @@ export default function Home() {
                     ADD TO FAVORITES
                   </button>
                 </span>
+                </Link>
               </li>
             ))}
           </ul>

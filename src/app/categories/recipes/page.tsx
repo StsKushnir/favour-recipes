@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { Meal } from "@/types/Meal";
 import { findByCategory } from "@/utils/filterCategory";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 
 type Props = {
@@ -30,6 +31,7 @@ const Recipes: React.FC<Props> = ({ currCategory }) => {
             key={meal.idMeal}
             className="p-6 border border-[#E2E6E9] bg-orange-100"
           >
+            <Link href={`${meal.strMeal}`}>
             <Image
               src={meal.strMealThumb}
               alt="dish-name"
@@ -56,6 +58,7 @@ const Recipes: React.FC<Props> = ({ currCategory }) => {
                 ADD TO FAVORITES
               </button>
             </span>
+            </Link>
           </li>
         ))}
       </ul>

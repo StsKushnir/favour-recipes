@@ -31,6 +31,7 @@ export const Recipes: React.FC<Props> = ({ currCategory }) => {
             key={meal.idMeal}
             className="p-6 border border-[#E2E6E9] bg-orange-100"
           >
+            <Link href={`${meal.strMeal}`}>
             <Image
               src={meal.strMealThumb}
               alt="dish-name"
@@ -57,6 +58,7 @@ export const Recipes: React.FC<Props> = ({ currCategory }) => {
                 ADD TO FAVORITES
               </button>
             </span>
+            </Link>
           </li>
         ))}
       </ul>
